@@ -67,7 +67,7 @@ Find latest NVIDIA Docker here [https://github.com/NVIDIA/nvidia-docker].
 	wget -P https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
 	sudo dpkg -i nvidia-docker*.deb
 
-Restart Nvidia Driver and verify that docker is installed
+Restart Nvidia Driver and verify that docker is installed.
 	
 	sudo systemctl restart nvidia-docker
 	nvidia-docker run --rm nvidia/cuda nvidia-smi
@@ -78,10 +78,13 @@ Build docker image with name 'fastai-keras' (replace if using any other name)
 	
 	sudo nvidia-docker build -t fastai-keras --rm -f ~/Docker_Tutorial/fastai-Dockerfiles/Dockerfile_keras ~/Docker_Tutorial/fastai-Dockerfiles/
 	
-Run a container using image created above.
+Run a container using image created above. Here i am running the container in background (by using '-d' argument).
 	
 	sudo bash run_container.sh fastai fastai-keras
+
+Open jupyter notebook in browser
 	
+	http://[host-ip]:8888/
 
 ### References
 
